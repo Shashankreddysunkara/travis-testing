@@ -7,9 +7,9 @@ before_install:
    - # We force an update of the virtualenv
    - |
       if [ "$TRAVIS_PYTHON_VERSION" = "pypy" ]; then
-         whereis pypy
-         cd ~/virtualenv/pypy/
-         virtualenv -p /usr/bin/pypy .
+         deactivate
+         virtualenv -p /usr/bin/pypy ~/virtualenv/pypy/
+         source ~/virtualenv/pypy/bin/activate
       fi
 install:
    - make lib
