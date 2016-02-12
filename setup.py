@@ -15,7 +15,7 @@ setup(
     url='http://github.com/CTPUG/pygame_cffi',
     license='MIT',
     description="A package for testing travis configurations.",
-    long_description=open('README.rst', 'r').read(),
+    long_description=open('README.md', 'r').read(),
     packages=['thing'],
     include_package_data=True,
     scripts=[
