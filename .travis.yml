@@ -3,6 +3,13 @@ python:
 - 2.7
 - 3.5
 - "pypy"
+pre-install:
+   - if [ "$TRAVIS_PYTHON_VERSION" = "pypy" ]; then
+        # Need to update the virtual env to use the right version
+        whereis pypy
+        cd ~/virtualenv/pypy/
+        virtualenv -p /usr/bin/pypy .
+     fi
 install:
    - make lib
    - pip install -e .
