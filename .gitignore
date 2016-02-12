@@ -1,2 +1,6 @@
 *.pyc
 libtest*so
+build
+dist
+*.egg
+*.egg-info
