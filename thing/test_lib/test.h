@@ -5,8 +5,7 @@
 
 int check();
 int assign(const char* arg, int len);
-
-int check2();
-int assign2(const unsigned char* arg, int len);
+char *get_buffer();
+int get_len();
 
 #endif
