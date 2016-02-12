@@ -2,6 +2,7 @@ import cffi
 import os
 import array
 import unittest
+import sys
 
 ffi = cffi.FFI()
 
@@ -57,6 +58,10 @@ class TestFFI(unittest.TestCase):
         self.assertEqual(lib.assign(self.data2, len(self.data2)), 1)
         self.assertEqual(self.data2, get_buf())
         self.assertEqual(lib.check(), 1)
+
+    def test_fail_sys(self):
+        # fail, display the python version
+        self.assertEqual(sys.version, 'foo\n')
 
 
 if __name__ == '__main__':
