@@ -23,8 +23,6 @@ setup(
     setup_requires=[
         'cffi>=1.0.3',
     ],
-    ext_modules=[Extension('thing/test_lib/libtest', ['thing/test_lib/test.c'])],
-    #cffi_modules=["thing/test_ffi.py:ffi"],
     install_requires=[
         'cffi>=1.0.3',
     ],
