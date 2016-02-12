@@ -7,11 +7,11 @@ before_install:
 # We force an update of the virtualenv
    - |
       if [ "$TRAVIS_PYTHON_VERSION" = "pypy" ]; then
+         cat ~/apt-get-update.log
          VPATH=$VIRTUAL_ENV
          deactivate
          virtualenv -p /usr/bin/pypy $VPATH
          source $VPATH/bin/activate
-         cat ~/apt-get-update.log
       fi
 install:
    - make lib
