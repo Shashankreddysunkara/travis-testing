@@ -4,6 +4,7 @@ python:
 - 3.5
 install: make lib ;
          pip install -e .
+script: python -m thing
 sudo: false
 addons:
   apt:
