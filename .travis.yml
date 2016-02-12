@@ -2,8 +2,14 @@ language: python
 python:
 - 2.7
 - 3.5
-install: make lib ;
-         pip install -e .
+- "pypy"
+before_install:
+   - sudo add-apt-repository ppa:pypy/ppa -y
+   - sudo apt-get update -q
+   - sudo apt-get install pypy -y
+install:
+   - make lib
+   - pip install -e .
 script: python -m thing
 sudo: false
 addons:
