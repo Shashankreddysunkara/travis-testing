@@ -1,6 +1,7 @@
 import sys
 
 from setuptools import setup
+from setuptools.extension import Extension
 
 
 if sys.platform.startswith("darwin"):
@@ -22,7 +23,8 @@ setup(
     setup_requires=[
         'cffi>=1.0.3',
     ],
-    cffi_modules=cffi_modules,
+    ext_modules=[Extension('thing/test_lib/libtest', ['thing/test_lib/test.c'])],
+    #cffi_modules=["thing/test_ffi.py:ffi"],
     install_requires=[
         'cffi>=1.0.3',
     ],

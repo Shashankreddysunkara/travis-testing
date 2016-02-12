@@ -13,7 +13,10 @@ int assign2(const unsigned char* arg, int len);
 
 """)
 
-lib = ffi.dlopen(os.path.join('test_lib', 'libtest.so'))
+
+path = os.path.dirname(__file__)
+
+lib = ffi.dlopen(os.path.join(path, 'test_lib', 'libtest.so'))
 
 
 class TestFFI(unittest.TestCase):
