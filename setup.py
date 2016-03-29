@@ -21,10 +21,10 @@ setup(
     scripts=[
     ],
     setup_requires=[
-        'cffi>=1.0.3',
+        'cffi>=1.3.0',
     ],
     install_requires=[
-        'cffi>=1.0.3',
+        'cffi>=1.3.0',
     ],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
