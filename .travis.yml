@@ -20,7 +20,7 @@ before_install:
       fi
    - psql -c 'create database test;' -U postgres
 install:
-   - if [ "$DB" = "postgres" ]; then pip install -q psycopg2 --use-mirrors; fi
+   - if [ "$DB" = "postgres" ]; then pip install -q psycopg2 ; fi
    - make lib
    - pip install -e .
 script: python -m thing
