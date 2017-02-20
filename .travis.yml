@@ -15,14 +15,18 @@ before_install:
          cat ~/apt-get-update.log
          VPATH=$VIRTUAL_ENV
          deactivate
+         mv $VPATH/lib $VPATH/old_lib
+         mv $VPATH/bin $VPATH/bin
          virtualenv -p /usr/bin/pypy $VPATH
          source $VPATH/bin/activate
          python --version
+         pypy --version
       fi
    - psql -c 'create database test;' -U postgres
 install:
    - if [ "$DB" = "postgres" ]; then pip install -q psycopg2 ; fi
    - make lib
+   - pip install cffi
    - pip install -e .
 script: python -m thing
 sudo: false
