@@ -15,8 +15,9 @@ before_install:
          cat ~/apt-get-update.log
          VPATH=$VIRTUAL_ENV
          deactivate
-         mv $VPATH/lib $VPATH/old_lib
-         mv $VPATH/bin $VPATH/bin
+         ls $VPATH
+         mv $VPATH/lib-python $VPATH/old_lib
+         mv $VPATH/bin $VPATH/old_bin
          virtualenv -p /usr/bin/pypy $VPATH
          source $VPATH/bin/activate
          python --version
