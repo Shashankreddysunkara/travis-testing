@@ -17,6 +17,7 @@ before_install:
          deactivate
          virtualenv -p /usr/bin/pypy $VPATH
          source $VPATH/bin/activate
+         python --version
       fi
    - psql -c 'create database test;' -U postgres
 install:
